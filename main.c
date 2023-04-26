@@ -14,9 +14,15 @@ int main(int ac, char **argv, char **env)
 char *instant = "PJshell:";
 char *bufAdd = NULL, *bufAdd_cpy = NULL;
 size_t siz = 0;
+pid_t  fpid;
+int fstat;
 const char *bound = " \n";
 ssize_t sizchar;
 char *index;
+/*
+ *size_t argzN = 0;
+ * char **argz;
+ */
 int num_index = 0;
 int y;
 bool pipee = false;
@@ -64,6 +70,20 @@ for (y = 0; index != NULL; y++)
 argv[y] = NULL;
 cmdexe(argv);
 
+/*if (bultin(argz, argzN))
+*	continue;
+*/	
+fpid = fork();
+if (fpid == -1)
+{
+perror("Error (fork)");
+exit(EXIT_FAILURE);
+}
+if (waitpid(fpid, &fstat, 0) == -1)
+{
+perror("Error (wait)");
+exit(EXIT_FAILURE);
+}
 }
 free(bufAdd_cpy);
 free(bufAdd);

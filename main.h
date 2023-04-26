@@ -11,6 +11,7 @@
 #include <string.h>
 #include <stdbool.h>
 #include <stddef.h>
+#include <sys/wait.h>
 
 void cmdexe(char **argv);
 void exit_handlin(char **arg_ex, size_t args);
