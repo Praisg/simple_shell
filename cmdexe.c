@@ -1,8 +1,8 @@
 #include "main.h"
 
 /*
- * cmdexe - handles commands
- * Return - 1 for success
+ *cmdexe - handles commands
+ *Return - 1 for success
  */
 
 void cmdexe(char **argv)
