@@ -6,7 +6,7 @@
  * Return: 0 always for success -1 for failure
  */
 
-int main(int ac, char **argv, char **arg_exi, char **env)
+int main(int ac, char **argv, char **env)
 {
 char *instant = "PJshell:";
 char *bufAdd = NULL, *bufAdd_cpy = NULL;
@@ -18,7 +18,7 @@ int num_index = 0;
 int y;
 bool pipee = false; 
 (void) ac;
-
+(void) env;
 while (1 && !pipee)
 {
 	if (isatty(STDIN_FILENO) == 0)
@@ -56,7 +56,6 @@ for (y = 0; index != NULL; y++){
 }
 argv[y] = NULL;
 cmdexe(argv);
-exit_handlin(arg_ex);
 }
 free(bufAdd_cpy);
 free(bufAdd);
