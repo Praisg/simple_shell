@@ -9,8 +9,11 @@
 #include <fcntl.h>
 #include <unistd.h>
 #include <string.h>
-
+#include <stdbool.h>
 void cmdexe(char **argv);
+void exit_handlin(char **arg_ex);
+void env_handlin(char **arg_env, size_t args);
+void _print(void);
 char *location(char *command);
 int boiler_pt(int ac, char **argv);
 ssize_t get_line(char **bufAdd, size_t *siz, FILE *stream);

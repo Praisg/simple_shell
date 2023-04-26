@@ -6,7 +6,7 @@
  * Return: 0 always for success -1 for failure
  */
 
-int main(int ac, char **argv)
+int main(int ac, char **argv, char **arg_exi, char **env)
 {
 char *instant = "PJshell:";
 char *bufAdd = NULL, *bufAdd_cpy = NULL;
@@ -16,9 +16,13 @@ ssize_t sizchar;
 char *index;
 int num_index = 0;
 int y;
+bool pipee = false; 
 (void) ac;
 
-while (1){
+while (1 && !pipee)
+{
+	if (isatty(STDIN_FILENO) == 0)
+		pipee = true;
 printf("%s", instant);
 sizchar = getline(&bufAdd, &siz, stdin);
 
@@ -52,7 +56,7 @@ for (y = 0; index != NULL; y++){
 }
 argv[y] = NULL;
 cmdexe(argv);
-
+exit_handlin(arg_ex);
 }
 free(bufAdd_cpy);
 free(bufAdd);
