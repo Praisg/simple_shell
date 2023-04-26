@@ -10,8 +10,11 @@
 #include <unistd.h>
 #include <string.h>
 #include <stdbool.h>
+#include <stddef.h>
+
 void cmdexe(char **argv);
 void exit_handlin(char **arg_ex, size_t args);
+bool bultin(char **argz, size_t argzN);
 void env_handlin(char **arg_env, size_t args);
 void _print(void);
 char *location(char *command);
