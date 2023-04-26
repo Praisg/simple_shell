@@ -8,8 +8,7 @@
 
 int main(int ac, char **argv)
 {
-(void) ac;
-char *instant = "(PJshell)$:";
+char *instant = "PJshell:";
 char *bufAdd = NULL, *bufAdd_cpy = NULL;
 size_t siz = 0;
 const char *bound = " \n";
@@ -17,10 +16,11 @@ ssize_t sizchar;
 char *index;
 int num_index = 0;
 int y;
+(void) ac;
 
 while (1){
 printf("%s", instant);
-sizchar = getline(&bufAdd, &siz, stdin);//check for getline failure
+sizchar = getline(&bufAdd, &siz, stdin);
 
 if (sizchar == -1){
 	printf("Exit Shell\n");
@@ -51,10 +51,9 @@ for (y = 0; index != NULL; y++){
 	index = strtok(NULL, bound);
 }
 argv[y] = NULL;
-cmdexe(argv);// execute command
+cmdexe(argv);
 
 }
-//free up allocated memory
 free(bufAdd_cpy);
 free(bufAdd);
 return (0);
