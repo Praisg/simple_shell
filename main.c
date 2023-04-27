@@ -19,10 +19,8 @@ int fstat;
 const char *bound = " \n";
 ssize_t sizchar;
 char *index;
-/*
- *size_t argzN = 0;
- * char **argz;
- */
+ size_t argzN = 0;
+  char **argz = NULL;
 int num_index = 0;
 int y;
 bool pipee = false;
@@ -70,9 +68,8 @@ for (y = 0; index != NULL; y++)
 argv[y] = NULL;
 cmdexe(argv);
 
-/*if (bultin(argz, argzN))
-*	continue;
-*/	
+if (bultin(argz, argzN))
+	continue;
 fpid = fork();
 if (fpid == -1)
 {
