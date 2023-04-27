@@ -30,7 +30,7 @@ while (1 && !pipee)
 {
 	if (isatty(STDIN_FILENO) == 0)
 		pipee = true;
-printf("%s", instant);
+write(STDOUT_FILENO, instant, 8);
 sizchar = getline(&bufAdd, &siz, stdin);
 
 if (sizchar == -1)
