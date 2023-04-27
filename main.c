@@ -23,14 +23,13 @@ char *index;
   char **argz = NULL;
 int num_index = 0;
 int y;
-/*bool pipee = false;*/
+bool pipee = false;
 (void) ac;
 (void) env;
-while (1)/* && !pipee)
+while (1 && !pipee)
 {
 	if (isatty(STDIN_FILENO) == 0)
-		pipee = true;*/
-{
+		pipee = true;
 printf("%s", instant);
 sizchar = getline(&bufAdd, &siz, stdin);
 
