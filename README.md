@@ -32,6 +32,7 @@ Simple Shell 1.0
     Implement the env built-in, that prints the current environment.
 
 Usage
+
 shell will be compiled this way:
    gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
    
