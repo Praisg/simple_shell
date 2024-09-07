@@ -1,6 +1,6 @@
 <b>Simple Shell</b>
 
-Description
+
 This project is a simple UNIX command line interpreter. It provides basic command line functionality and executes commands entered by the user.
 Features
 Simple Shell 0.1
